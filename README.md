@@ -16,6 +16,7 @@ git clone https://git@github.com:brianrono/phase-1-final-project.git
  Start the server:
 
     npm start
+    data provided from this api https://www.freetogame.com/api/games
     Open your web browser and go to http://localhost:3000.
 
 ## Usage
