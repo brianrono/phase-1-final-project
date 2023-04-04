@@ -2,6 +2,7 @@ const form = document.querySelector('form');
 const gameDetails = document.querySelector('.game-details');
 const baseUrl = 'http://localhost:3000';
 
+
 form.addEventListener('submit', e => {
     e.preventDefault();
 
@@ -39,6 +40,7 @@ form.addEventListener('submit', e => {
             gameDetails.style.display = 'block';
         });
 });
+// this function displays the web page with an example of how the data is loaded
 function displayExampleGame() {
     const exampleGame = {
         id: 452,
@@ -69,4 +71,48 @@ function displayExampleGame() {
     gameDetails.style.display = 'block';
   }
   window.addEventListener('load', displayExampleGame);
+
+//   this' a function to sort games by platform
+  function sortByPlatform() {
+    event.preventDefault();
+    fetch(`${baseUrl}/games?_sort=platform`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(response.statusText);
+        }
+        return response.json();
+      })
+      .then(games => {
+        if (games.length === 0) {
+          throw new Error('No games found');
+        }
+        const gamesHtml = games.map(game => {
+          return `
+            <li>
+              <img src="${game.thumbnail}" alt="${game.title}">
+              <h2>${game.title}</h2>
+              <p><strong>Genre:</strong> ${game.genre}</p>
+              <p><strong>Platform:</strong> ${game.platform}</p>
+              <p><strong>Publisher:</strong> ${game.publisher}</p>
+              <p><strong>Developer:</strong> ${game.developer}</p>
+              <p><strong>Release Date:</strong> ${game.release_date}</p>
+              <p>${game.short_description}</p>
+              <p><strong>Plays:</strong> ${game.plays}</p>
+            </li>
+          `;
+        }).join('');
   
+        gameDetails.innerHTML = `<ul>${gamesHtml}</ul>`;
+        gameDetails.style.display = 'block';
+      })
+      .catch(error => {
+        console.error('Error fetching games:', error);
+        gameDetails.innerHTML = error.message;
+        gameDetails.style.display = 'block';
+      });
+    }
+
+const header = document.querySelector('h1');
+  header.addEventListener('click',() => {
+      location.reload();
+  });
