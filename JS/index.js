@@ -39,3 +39,34 @@ form.addEventListener('submit', e => {
             gameDetails.style.display = 'block';
         });
 });
+function displayExampleGame() {
+    const exampleGame = {
+        id: 452,
+        title: "Call Of Duty: Warzone",
+        thumbnail: "https://www.freetogame.com/g/452/thumbnail.jpg",
+        short_description: "A standalone free-to-play battle royale and modes accessible via Call of Duty: Modern Warfare.",
+        game_url: "https://www.freetogame.com/open/call-of-duty-warzone",
+        genre: "Shooter",
+        platform: "PC (Windows)",
+        publisher: "Activision",
+        developer: "Infinity Ward",
+        release_date: "2020-03-10",
+        freetogame_profile_url: "https://www.freetogame.com/call-of-duty-warzone"
+    };
+  
+    const gameHtml = `
+      <img src="${exampleGame.thumbnail}" alt="${exampleGame.title}">
+      <h2>${exampleGame.title}</h2>
+      <p><strong>Genre:</strong> ${exampleGame.genre}</p>
+      <p><strong>Platform:</strong> ${exampleGame.platform}</p>
+      <p><strong>Publisher:</strong> ${exampleGame.publisher}</p>
+      <p><strong>Developer:</strong> ${exampleGame.developer}</p>
+      <p><strong>Release Date:</strong> ${exampleGame.release_date}</p>
+      <p>${exampleGame.short_description}</p>
+    `;
+  
+    gameDetails.innerHTML = gameHtml;
+    gameDetails.style.display = 'block';
+  }
+  window.addEventListener('load', displayExampleGame);
+  
