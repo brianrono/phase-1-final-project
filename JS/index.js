@@ -1,3 +1,9 @@
+// fetch('https://www.freetogame.com/api/games')
+//   .then(response => response.text())
+//   .then(data => console.log(data))
+//   .catch(error => console.error(error));
+
+
 const form = document.querySelector('form');
 const gameDetails = document.querySelector('.game-details');
 const baseUrl = 'http://localhost:3000';
@@ -8,7 +14,7 @@ form.addEventListener('submit', e => {
 
     const gameId = document.querySelector('#game-id').value;
 
-    fetch(`${baseUrl}/games?id=${gameId}`)
+    fetch(`${baseUrl}/games?id=${gameId}`) // fetch(`url` mode: no-cors) ???
         .then(response => {
             if (!response.ok) {
                 throw new Error(response.statusText);
@@ -104,9 +110,9 @@ function displayExampleGame() {
               <p><strong>Release Date:</strong> ${game.release_date}</p>
               <p>${game.short_description}</p>
               <p><strong>Plays:</strong> ${game.plays}</p>
-              <button class="upvote-button" data-game-id="${game.id}">Upvote</button>
-              <span class="upvote-count">${game.upvotes}</span>
-              </li>
+              <button class="upvote-button" data-game-id="${game.id}" onclick="upvoteGame(${game.id})">Upvote</button>
+              <span class="upvote-count" id="upvote-count-${game.id}">${game.upvotes || 0}</span>
+            </li>
           `;
         }).join('');
 

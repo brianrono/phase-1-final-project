@@ -1,5 +1,5 @@
 body {
-    background-color: black !important;
+    background-color: rgb(39, 37, 37) !important;
 	background-size:auto;
 }
 
@@ -66,6 +66,10 @@ button[type="sort"]:hover {
 	color: white;
 }
 
+.upvote-button {
+	background-color: rgb(255, 64, 0);;
+	margin-bottom: 40px;
+}
 
 .game-details {
 	background-color:rgb(1, 153, 218);
@@ -75,4 +79,8 @@ button[type="sort"]:hover {
 	display: none;
 	width: 100%;
 	height: auto;
+}
+
+.upvote-count {
+	background-color: rgb(255, 153, 1);
 }
