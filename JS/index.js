@@ -148,10 +148,10 @@ function displayExampleGame() {
         gameDetails.innerHTML = `<ul>${gamesHtml}</ul>`;
         gameDetails.style.display = 'block';
 
-        // add event listener to all upvote buttons
+        // add event listener to the upvote buttons to display the votes
         const upvoteButtons = document.querySelectorAll('.upvote-button');
         upvoteButtons.forEach(button => {
-          button.addEventListener('click', () => {
+          button.addEventListener('click', function(e) {
             const upvoteCountEl = e.target.nextElementSibling;
             let upvoteCount = parseInt(upvoteCountEl.textContent);
             upvoteCount++;
