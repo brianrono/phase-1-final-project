@@ -20,6 +20,9 @@ h2 {
 	color: blue;;
 }
 
+label {
+	color: red;
+}
 form {
 	margin-bottom: 20px;
 }
