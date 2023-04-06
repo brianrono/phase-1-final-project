@@ -53,7 +53,7 @@ const header = document.querySelector('h1'); // when the header is clicked it re
   });
 
 // this function displays the web page with an example of how the data is loaded
-function displayExampleGame() {
+function webDisplay() {
     const exampleGame = {
         id: 452,
         title: "Call Of Duty: Warzone",
@@ -82,7 +82,7 @@ function displayExampleGame() {
     gameDetails.innerHTML = gameHtml;
     gameDetails.style.display = 'block';
   }
-  window.addEventListener('load', displayExampleGame);
+  window.addEventListener('load', webDisplay);
 
 //   this' a function to sort games by platform
   function sortByPlatform() {
@@ -112,6 +112,8 @@ function displayExampleGame() {
               <p><strong>Plays:</strong> ${game.plays}</p>
               <button class="upvote-button" data-game-id="${game.id}" onclick="upvoteGame(${game.id})">Upvote</button>
               <span class="upvote-count" id="upvote-count-${game.id}">${game.upvotes || 0}</span>
+              <button class="downvote-button" data-game-id="${game.id}" onclick="downvoteGame(${game.id})">Downvote</button>
+              <span class="downvote-count" id="downvote-count-${game.id}">${game.downvotes || 0}</span>
             </li>
           `;
         }).join('');
@@ -150,7 +152,7 @@ function displayExampleGame() {
             }
           });
         });
-  
+        
         gameDetails.innerHTML = `<ul>${gamesHtml}</ul>`;
         gameDetails.style.display = 'block';
 

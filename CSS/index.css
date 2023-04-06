@@ -71,6 +71,11 @@ button[type="sort"]:hover {
 	margin-bottom: 40px;
 }
 
+.downvote-button {
+	background-color: rgb(255, 64, 0);;
+	margin-bottom: 40px;
+}
+
 .game-details {
 	background-color:rgb(1, 153, 218);
 	padding: 20px;
