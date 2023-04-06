@@ -26,15 +26,17 @@ git clone https://git@github.com:brianrono/phase-1-final-project.git
 
 3. Click the "Search" button.
 
-4. The details of the game will be displayed on the page.
+4. The details of the game will be displayed below the page.
 
  To sort the games by a specific property:
 
-1. Click the "Sort by" dropdown menu.
+1. Click the sort button.
 
-2. Select the property by which you want to sort the games (developer, genre, ID, or platform).
+2. Select the property by which you want to sort the games (d"", genre, ID, or platform).
 
 3. The games will be sorted by the selected property.
+
+
 ## Credits and Licensing
 Author: Brian Rono
 brianrono16@gmail.com
