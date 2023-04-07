@@ -36,6 +36,7 @@ git clone https://git@github.com:brianrono/phase-1-final-project.git
 
 3. The games will be sorted by the selected property.
 
+4. You can view live site from this link https://brianrono.github.io/phase-1-final-project/
 
 ## Credits and Licensing
 Author: Brian Rono
